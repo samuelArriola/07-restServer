@@ -12,7 +12,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
 } else {
-    urlDB = 'mongodb+srv://samuel:kDW4ef5Z4Sc4RSUl@cluster0.lm8t7.mongodb.net/cafe';
+    urlDB = process.env.MONGO_URL; //ESTA VARIABLE DE EENTORNO LA CREO EN MI HOSTIN PARA QUE NO SEA VISIBLE AQUI
 }
 
 //creamon un envairoment para almacenar la conexion 
