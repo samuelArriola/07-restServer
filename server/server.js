@@ -5,7 +5,9 @@ const app = express();
 
 // app.set('port', process.env.PORT || 3000);
 app.use(express.json());
-app.use(require('./router/usuario'));
+
+//congiguracion global de rutas //esto es para no escribir todas las rutas aqui; ORDENAR
+app.use(require('./router/index'));
 
 
 
