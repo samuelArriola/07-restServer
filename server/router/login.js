@@ -51,6 +51,17 @@ app.post('/login', (req, res) => {
         });
 
     });
+
+})
+
+app.post('/googlee', (req, res) => {
+
+    let token = req.body;
+
+    res.json({
+        ok: true,
+        token
+    });
 })
 
 

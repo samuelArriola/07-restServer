@@ -85,7 +85,7 @@ app.put('/user/:id', [verificaToken, verifica_usuario], (req, res) => {
     let { id } = req.params;
     let body = _.pick(req.body, ['nombre', 'role', 'img', 'estado']); //solo ingresamos los que se pueden editar 
 
-    // si queremos que el usuario no pueda actualisar campos que no debe
+    // si queremos que el usuario no pueda actualizar campos que no debe
     //cuando son muchos datos,, usamos la pripiedad pick() que nos ofrece el paquete "underscore"
     // delete body.email; //el campo nose afectara 
 
