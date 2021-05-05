@@ -21,7 +21,7 @@ let verificaToken = (req, res, next) => {
     let token = req.get('token'); //obtener token desde header 
     // console.log(token);
 
-    //cerificamos el que el token sea el correcto, esta funsion es propia de jwt
+    //verificamos el que el token sea el correcto, esta funsion es propia de jwt
     jwt.verify(token, process.env.SEED, (err, decoded) => {
         if (!token) {
             return res.status(401).json({

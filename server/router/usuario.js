@@ -138,7 +138,7 @@ app.delete('/user/:id', [verificaToken, verifica_usuario], (req, res) => {
 app.put('/user/delLog/:id', verificaToken, (req, res) => {
     let { id } = req.params;
     let body = _.pick(req.body, ['estado']); //se puede hacer por body o se puede crear una variables
-    let borraLogico = { //solo cambias el parametro a llamar "line 133"  
+    let borraLogico = { //solo cambias el parametro a llamar "findByIdAndUpdate"  
         estado: false
     }
 

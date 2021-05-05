@@ -24,3 +24,7 @@ process.env.CADUCIDAD_TOKEN = 30 * 30 * 24 * 30;
 
 //semilla de autenticacion 
 process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo'; //PARA USARLO TANTO LOCAL COMO EN PRODEUCION
+
+
+//mi cliente de google 
+process.env.CLIENT_ID = process.env.CLIENT_ID || '990629590399-jipqrpk3n5300vtljsmilq2p616gh028.apps.googleusercontent.com';
