@@ -1,0 +1,37 @@
+{
+    "folders": [
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\..\\xampp\\htdocs\\portal_empleo_fase2"
+		},
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\node\\express"
+		},
+		{
+			"path": "..\\..\\..\\..\\njwt"
+		},
+		{
+			"path": "..\\..\\..\\..\\colegio_peru"
+		},
+		{
+			"path": "..\\..\\..\\02-fundamentos"
+		},
+		{
+			"path": "..\\..\\..\\01-hola-mundo"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\..\\xampp\\htdocs\\investigacion"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\..\\xampp\\htdocs\\smlos"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\..\\xampp\\htdocs\\curso_php"
+		}
+	],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "colegio_peru"
+    }
+}

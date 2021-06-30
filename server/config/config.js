@@ -15,12 +15,12 @@ if (process.env.NODE_ENV === 'dev') {
     urlDB = process.env.MONGO_URL; //ESTA VARIABLE DE EENTORNO LA CREO EN MI HOSTIN PARA QUE NO SEA VISIBLE AQUI
 }
 
-//creamon un envairoment para almacenar la conexion 
+//creamon un envairoment para almacenar la conexion
 process.env.URLDB = urlDB;
 
 //variables de token 
 //VENCIMIENTO DEL TOKEN (60*60*24*30)
-process.env.CADUCIDAD_TOKEN = 30 * 30 * 24 * 30;
+process.env.CADUCIDAD_TOKEN = '48h';
 
 //semilla de autenticacion 
 process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo'; //PARA USARLO TANTO LOCAL COMO EN PRODEUCION
