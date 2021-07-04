@@ -10,7 +10,10 @@ let categoriaShema = new Schema({
         type: String,
         required: [true, 'La descripción es necesaria ']
     },
-    id_user: Schema.Types.ObjectId,
+    usuario: {
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario', //nombre del modelo a que le quieres extrael el usuario
+    }
 
 
 

@@ -6,7 +6,8 @@ const { verificaToken, verifica_usuario } = require('../middlewares/autenticacio
 app.get('/categoria', verificaToken, (req, res) => {
 
     Categoria.find({})
-        .populate('id_user')
+        .sort('nombre') //organiza la impormacion 
+        .populate('usuario', 'nombre email') //nombre de la collection  //datos que quieres mostrar del objeto
         .exec((err, categoria) => {
             if (err) {
                 return res.status(400).json({
@@ -48,7 +49,7 @@ app.get('/categoria/:id', verificaToken, (req, res) => {
         }
 
         if (!categoria) {
-            return res.json.status(400).json({
+            return res.status(400).json({
                 ok: false,
                 err: {
                     menssage: 'categoria no encontrada'
@@ -75,7 +76,7 @@ app.post('/categoria', verificaToken, (req, res) => {
     let categoria = new Categoria({
         nombre: body.nombre,
         desc: body.desc,
-        id_user: _id,
+        usuarios: _id,
 
     });
 

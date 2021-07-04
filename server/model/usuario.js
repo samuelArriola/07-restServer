@@ -50,5 +50,4 @@ usuarioSchema.methods.toJSON = function() {
 }
 
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} Debe se unico, es decir, no se puede repetir' });
-
 module.exports = mongoose.model('Usuario', usuarioSchema);
