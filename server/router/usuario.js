@@ -34,7 +34,7 @@ app.get('/user', [verificaToken, verifica_usuario], (req, res) => {
         .exec((err, usuarios) => {
 
             if (err) {
-                return res.status(400).json({
+                return res.status(500).json({
                     ok: false,
                     err
                 });
@@ -65,7 +65,7 @@ app.post('/user', verificaToken, (req, res) => {
 
     usuario.save((err, usuarioDB) => {
         if (err) {
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err: err
             })
@@ -92,7 +92,7 @@ app.put('/user/:id', [verificaToken, verifica_usuario], (req, res) => {
     // runValidators: true : corelas validaciones que estan creadas en el modelo 
     Usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, usuarioDB) => { //new es un parametro que muestra los datos ya actualizada "leer docimentacion"
         if (err) {
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err
             });
@@ -111,7 +111,7 @@ app.delete('/user/:id', [verificaToken, verifica_usuario], (req, res) => {
     let { id } = req.params;
     Usuario.findByIdAndDelete(id, (err, usuarioBorrado) => {
         if (err) {
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err
             });
@@ -144,7 +144,7 @@ app.put('/user/delLog/:id', verificaToken, (req, res) => {
 
     Usuario.findByIdAndUpdate(id, borraLogico, { new: true, runValidators: true }, (err, usuarioDB) => { //new es un parametro que muestra los datos ya actualizada "leer docimentacion"
         if (err) {
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err
             });

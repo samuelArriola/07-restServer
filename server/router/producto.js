@@ -10,12 +10,12 @@ app.get('/producto', (req, res) => {
     let desde = req.query.desde || 0;
     desde = Number(desde);
 
-    let hasta = req.query.hasta || 5;
-    hasta = Number(hasta);
+    let cuenta = req.query.cuenta || 5;
+    cuenta = Number(cuenta);
 
     Producto.find({ estado: true })
         .skip(desde)
-        .limit(hasta)
+        .limit(cuenta)
         .exec((err, productoDB) => {
             if (err) {
                 return res.status(400).json({

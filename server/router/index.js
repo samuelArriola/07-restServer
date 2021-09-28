@@ -8,6 +8,9 @@ app.use(require('./usuario'));
 app.use(require('./login'));
 app.use(require('./producto'));
 app.use(require('./categoria'));
+app.use(require('./productov.js'));
+app.use(require('./uploads.js'));
+app.use(require('./imagenes.js'));
 
 
 module.exports = app;

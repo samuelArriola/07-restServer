@@ -15,6 +15,7 @@ const jwt = require('jsonwebtoken');
 };
  */
 
+
 //verificar el token 
 
 let verificaToken = (req, res, next) => {
@@ -61,8 +62,36 @@ let verifica_usuario = (req, res, next) => {
     next();
 }
 
+//verifica el token para imagenes 
+let verificaTokenImg = (req, res, next) => {
+    let token = req.query.token;
+
+
+    jwt.verify(token, process.env.SEED, (err, decoded) => {
+        if (!token) {
+            return res.status(401).json({
+                ok: false,
+                err: {
+                    message: 'no exite token para este usuario vuelva a logearse'
+                }
+            });
+        }
+        if (err) {
+            return res.status(401).json({
+                ok: false,
+                err
+            });
+        }
+
+        req.usuario = decoded.usuario;
+        next();
+    })
+
+}
+
 
 module.exports = {
     verificaToken,
-    verifica_usuario
+    verifica_usuario,
+    verificaTokenImg
 }

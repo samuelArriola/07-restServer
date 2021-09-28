@@ -6,7 +6,7 @@ const { verificaToken, verifica_usuario } = require('../middlewares/autenticacio
 app.get('/categoria', verificaToken, (req, res) => {
 
     Categoria.find({})
-        .sort('nombre') //organiza la impormacion 
+        .sort('nombre') //organiza la imformacion 
         .populate('usuario', 'nombre email') //nombre de la collection  //datos que quieres mostrar del objeto
         .exec((err, categoria) => {
             if (err) {
